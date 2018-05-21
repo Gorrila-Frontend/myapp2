@@ -1,20 +1,16 @@
 import { combineReducers } from 'redux';
 
-const taskReducers= (state = [], action) => {
-    switch (action.type) {
-        case 'ADD_TASK':
-            state = state.concat(action.payload);
-            break;
-        case 'DELETE_TASK':
-            state = state.slice();
-            state.splice(action.payload, 1);
-            break;
-        default: 
-            return state;
-    }
-    return state;
-    
+const tasksReducers = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TASK':
+      return [...state, action.payload.task];
+    case 'DELETE_TASK':
+      return state.filter(task => task.id !== action.payload.taskId);
+    default:
+      return state;
+  }
 };
+
 export default combineReducers({
-    task: taskReducers
+  tasks: tasksReducers
 });
