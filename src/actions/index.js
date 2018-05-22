@@ -1,9 +1,17 @@
+const toggleTodo = taskId => {
+  return {
+    type: 'TOGGLE_TODO',
+    payload:  { taskId },
+  };
+};
+
 const addTask = task => {
   return {
     type: 'ADD_TASK',
     payload: { task },
   };
-}
+};
+
 
 const deleteTask = taskId => {
   return {
@@ -12,4 +20,4 @@ const deleteTask = taskId => {
   };
 };
 
-export { addTask, deleteTask };
+export { addTask, deleteTask, toggleTodo };

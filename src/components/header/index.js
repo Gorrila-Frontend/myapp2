@@ -11,7 +11,8 @@ class Header extends Component {
     }
 }
 export default styled(Header)`
-    background: #512DA8;
     color: #fff;
     text-align: center;
+    margin-bottom: 100px;
+    margin-top: 50px;
 `;
